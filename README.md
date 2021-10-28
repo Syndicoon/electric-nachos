@@ -47,7 +47,7 @@ myhomesite.com {
 }
 #
 # @@@@@@@@@@@@    ICECAST SERVER   @@@@@@@@@@@@@@
-#               ALL STATIONS AS UNIQUE SUB DOMAIN
+#      ALL STATIONS AS UNIQUE SUB DOMAIN
 radio.myhomesite.com {
         root * /usr/share/icecast2/web
         reverse_proxy localhost:8000
