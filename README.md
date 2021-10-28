@@ -55,65 +55,11 @@ On UBUNTU SERVER, Icecast serves up web pages from /usr/share/icecast2/web direc
 So place the two html files in this directory. 
 Place the metadataworker.js script in that directory.
 Place this script into the two pages, be sure to change the radio.myhomesite.com link to point to your icecast server. 
-# --------------------------------------------------------------------------------------------------------------------------------
-Webpage Sample save as radio-jazz.html
+# --------------------------------------------------------------
+[radio-jazz.html.txt](https://github.com/Syndicoon/electric-nachos/files/7433999/radio-jazz.html.txt)
 
-!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
- <!-- CSS
-  ================================================== -->
-    <link rel="stylesheet" href="stylesheets/base.css">
-    
-<title>Jazz Radio</title>
 
-</head>
-<body>
-    <center>
-    <img class="logo" src="images/logo.png" width="450" height="200" alt="logo">
-    <p></p>
-<audio preload="none" id="aud" controls src="https://radio.myhomesite.com/jazz" type="audio/mpeg">
-</audio>
-<div><h4></h4></div>
-<p></p>
-<a href="https://myhomesite.com/index.html"><h4>Radio Landing Page</h4></a>
-</center>
-<script>
-if ('serviceWorker' in navigator) {
-  var iceworker = navigator.serviceWorker.register('metadataworker.js')
-    .then(function(reg) {
-      console.log('Icecast service worker registered');
-    }).catch(function(error) {
-    console.warn('Error ' + error);
-  });
-}
-var delay = 8000;
-navigator.serviceWorker.addEventListener('message', event => {
-  if(event.origin != 'https://radio.myhomesite.com'){
-    return;
-  }
-  setTimeout(function(){
-    document.querySelector('h4').innerText = event.data.msg.substring(event.data.msg.indexOf("'") + 1,event.data.msg.lastIndexOf("'"));
-  },delay);
-
-  console.log(event.data.msg);
-});
-  document.querySelector('audio').addEventListener('pause', event => {
-  navigator.serviceWorker.controller.postMessage('message');
-  document.querySelector('audio').src = document.querySelector('audio').src;
-})
-  function addItem(text) {
-  var node = document.createElement("li");
-  var textnode = document.createTextNode(text);
-  node.appendChild(textnode);
-  document.querySelector('ul').appendChild(node);
-}
-</script>
-</body>
-</html>
-
-    #-------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------
     
     The metadataworker.js script
     
