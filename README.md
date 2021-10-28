@@ -35,23 +35,7 @@ Next... download and configure  Caddy.
 Caddy also lacks clear documentation. It makes a lot of assumptions so for complete newbies, it can be a bit confusing. 
 This is why I have included a sample Caddyfile. Change it to fit your needs. 
 # --------------------------------------------------------------------------
-# @@@@@     MAIN WEBSITE    @@@@@@
-myhomesite.com {
-
-        # Set this path to your site's directory.
-        # This will handle all requests for sardines.space
-        root * /path/to/website/files
-
-        # Enable the static file server.
-        file_server
-}
-#
-# @@@@@@@@@@@@    ICECAST SERVER   @@@@@@@@@@@@@@
-#      ALL STATIONS AS UNIQUE SUB DOMAIN
-radio.myhomesite.com {
-        root * /usr/share/icecast2/web
-        reverse_proxy localhost:8000
-}
+/home/syndi/TEST/Caddyfile-sample.txt
 # ---------------------------------------------------------------------------
 
 I am sure some have noticed that there are two domains: the main myhomesite.com and the sub-domain radio.myhomesite.com don't worry, this will work.
