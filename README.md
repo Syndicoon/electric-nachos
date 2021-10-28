@@ -35,7 +35,8 @@ Next... download and configure  Caddy.
 Caddy also lacks clear documentation. It makes a lot of assumptions so for complete newbies, it can be a bit confusing. 
 This is why I have included a sample Caddyfile. Change it to fit your needs. 
 # --------------------------------------------------------------------------
-/home/syndi/TEST/Caddyfile-sample.txt
+[Caddyfile-sample.txt](https://github.com/Syndicoon/electric-nachos/files/7433973/Caddyfile-sample.txt)
+
 # ---------------------------------------------------------------------------
 
 I am sure some have noticed that there are two domains: the main myhomesite.com and the sub-domain radio.myhomesite.com don't worry, this will work.
