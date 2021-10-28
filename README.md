@@ -68,8 +68,8 @@ Place this script into the two pages, be sure to change the radio.myhomesite.com
 #--------------------------------------------------------------------------------------------------------------------
 On the landing page, place a link to your radio pages....
 
- <a href="https://radio.myhomesite.com:8000/jazz.html">Jazz Radio</a>
- <a href="https://radio.myhomesite.com:8000/rock.html">Rock Radio</a>
+ <a href="https://radio.myhomesite.com/jazz.html">Jazz Radio</a>
+ <a href="https://radio.myhomesite.com/rock.html">Rock Radio</a>
  
  Now you should be able to access all your radio stations online AND have it show what is playing. 
  For the jazz station you could use this link....
