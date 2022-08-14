@@ -61,7 +61,7 @@ Place this script into the two pages, be sure to change the radio.myhomesite.com
 
 #---------------------------------------------------------------
     
-    The metadataworker.js script
+    The metadataworker.js script - github forced me to save it with the extra .txt so be sure rename it to metadataworker.js before actualy using it.
     
 [metadataworker.js.txt](https://github.com/Syndicoon/electric-nachos/files/7434016/metadataworker.js.txt)
 
