@@ -22,7 +22,7 @@ CONVENTIONS USED IN THIS TUTORIAL:
     Main site:  myhomesite.com
     radio site: radio.myhomesite.com
     external IP: 67.x.x.x
-    intneral IP  192.x.x.x
+    internal IP  192.x.x.x
     
 PRE-SETUP: First, to get true https with Caddy, you need to get a domain name. 
 It doesn't matter where you get it, but you will need to set up your DNS records once you get one. 
