@@ -53,7 +53,10 @@ Now comes the solution. Icecast has a built-in web server and we are going to us
 In this example the pages will be called jazz.html and rock.html. 
 On UBUNTU SERVER, Icecast serves up web pages from /usr/share/icecast2/web directory so anything put there will be served up by Icecast. Neat huh?
 So place the two html files in this directory. 
-Place the metadataworker.js script in that directory.
+Place the metadataworker.js script in the same directory where you placed the html files.
+I like to keep thing seperate from icecast's stuff so I placed them in a directory labled r. 
+/usr/share/icecast2/web/r   <<< Place html files and the metadataworker.js file here. Or call it something else if you want. 
+
 Place this script into the two pages, be sure to change the radio.myhomesite.com link to point to your icecast server. 
 # --------------------------------------------------------------
 [radio-jazz.html.txt](https://github.com/Syndicoon/electric-nachos/files/7433999/radio-jazz.html.txt)
