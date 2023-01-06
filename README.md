@@ -11,8 +11,9 @@ THE SCRIPT: I am using a script called metadata grabber that I found here: https
 The directions are rather sparce and I also found out that the scripts included do not actually work. 
 I had to grab the one used on the demo site. That one works BUT HAS LIMITS!
 
-THE PROBLEM: The script works great! But for security reasons and, I suspect limits with JS, the script must be run over two domains. While on the surface this seems to be easy to overcome, it isn't. 
-Caddy is a web server, so is Icecast. Yes, Icecast has a BUILT-IN WEBSERVER. 
+THE PROBLEM: The script works great! But for security reasons and, I suspect limits with JS, the script must be run on one domain. While on the surface this seems to be easy to overcome, it isn't. You see, you can't have your website on one domain and your music on another and get this script to work. 
+Why? The script runs from the webpage to scrape the stream from the music server. Two domains.... limit issue comes into play. 
+Caddy is a web server, and so is Icecast. Yes, Icecast has a built-in webserver. 
 To utilize Icecast you have to setup a reverse-proxy which means you are essentially setting up a sub-domain. 
 Doing this means you are forced to deal with two domains in your configuration of Icecast and Caddy which conflicts with the one domain limit of the script. 
 There is way around this and Icecast itself is the answer. 
@@ -26,8 +27,10 @@ CONVENTIONS USED IN THIS TUTORIAL:
 PRE-SETUP: First, to get true https with Caddy, you need to get a domain name. 
 It doesn't matter where you get it, but you will need to set up your DNS records once you get one. 
 
-DNS CONFIGURATION: 
+DNS CONFIGURATION:
+
     A          @           67.X.X.X
+    
     CNAME       radio       myhomesite.com
 
 Next... download and configure  Caddy. 
@@ -40,7 +43,7 @@ This is why I have included a sample Caddyfile. Change it to fit your needs.
 
 I am sure some have noticed that there are two domains: the main myhomesite.com and the sub-domain radio.myhomesite.com don't worry, this will work.
 
-WEBSITE SETUP: Create your homesite and set up and index.html page. This will be a landing page that will point to all your radio stations. 
+WEBSITE SETUP: Create your homesite set up and index.html page. This will be a landing page that will point to all your radio stations. 
 
 ICECAST SETUP: download and configure Icecast2 and set up your radio stations. For this tutorial, I will use the following radio stations: jazz and rock and use port 8000.  
 After you setup your icecast server you should be able to access these two stations using the following links: 
@@ -50,8 +53,8 @@ http://192.x.x.x:8000/rock      https://radio.myhomesite.com/rock
 
 Now comes the solution. Icecast has a built-in web server and we are going to use it to serve up the pages for our radio stations. 
 In this example the pages will be called jazz.html and rock.html. 
-On UBUNTU SERVER, Icecast serves up web pages from /usr/share/icecast2/web directory so anything put there will be served up by Icecast. Neat huh?
-So place the two html files in this directory. 
+On UBUNTU SERVER, Icecast serves up web pages from /usr/share/icecast2/web  directory so anything put there will be served up by Icecast. Neat huh?
+So place the two html files in this directory. This means the script will run on icecast2 and thus will run on one domain - the sub-domain. 
 Place the metadataworker.js script in the same directory where you placed the html files.
 I like to keep thing seperate from icecast's stuff so I placed them in a directory labled r. 
 /usr/share/icecast2/web/r   <<< Place html files and the metadataworker.js file here. Or call it something else if you want. 
