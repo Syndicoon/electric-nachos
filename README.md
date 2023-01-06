@@ -11,8 +11,7 @@ THE SCRIPT: I am using a script called metadata grabber that I found here: https
 The directions are rather sparce and I also found out that the scripts included do not actually work. 
 I had to grab the one used on the demo site. That one works BUT HAS LIMITS!
 
-THE PROBLEM: The script works great! But for security reasons and, I suspect limits with JS, the script must be run in the 
-same domain as the webpage it is attached to. While on the surface this seems to be easy to overcome, it isn't. 
+THE PROBLEM: The script works great! But for security reasons and, I suspect limits with JS, the script must be run over two domains. While on the surface this seems to be easy to overcome, it isn't. 
 Caddy is a web server, so is Icecast. Yes, Icecast has a BUILT-IN WEBSERVER. 
 To utilize Icecast you have to setup a reverse-proxy which means you are essentially setting up a sub-domain. 
 Doing this means you are forced to deal with two domains in your configuration of Icecast and Caddy which conflicts with the one domain limit of the script. 
